@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-key-pool"
+version = "0.1.0"
+description = "Provider-agnostic, family-aware API key pool manager for LLM proxies"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Ali Barkat" }]
+requires-python = ">=3.9"
+keywords = [
+    "llm",
+    "api-keys",
+    "key-rotation",
+    "rate-limit",
+    "proxy",
+    "openai",
+    "anthropic",
+    "gemini",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: AsyncIO",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/alibarkat/llm-key-pool"
+Issues = "https://github.com/alibarkat/llm-key-pool/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["keypool"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
